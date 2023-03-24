@@ -11,10 +11,9 @@ const Navbar = () => {
 	const [showAccountMenu, setShowAccountMenu] = useState(false);
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	const [showBackground, setShowBackground] = useState(false);
-
+	
 	useEffect(() => {
 		const handleScroll = () => {
-			console.log(window.scrollY);
 			if (window.scrollY >= TOP_OFFSET) {
 				setShowBackground(true);
 			} else {
@@ -28,6 +27,7 @@ const Navbar = () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
+
 
 	const toggleAccountMenu = useCallback(() => {
 		setShowAccountMenu((current) => !current);
