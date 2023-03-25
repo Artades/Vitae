@@ -8,7 +8,7 @@ import Head from "next/head";
 const images = [
 	"/images/profile-blue.png",
 	"/images/profile-red.png",
-	"/images/profile-purple.png",
+	"/images/profile-slate.png",
 ];
 
 interface UserCardProps {

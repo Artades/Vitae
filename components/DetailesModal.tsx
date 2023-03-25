@@ -37,7 +37,7 @@ const DetailesModal: React.FC<DetailesModalProps> = ({ visible, onClose }) => {
 						isVisible ? "scale-100" : "scale-0"
 					} transform duration-300 relative flex-auto bg-zinc-900 drop-shadow-md`}
 				>
-					<div className="relative h-96">
+					<div className="relative h-76">
 						<img
 							src={data?.imageUrl}
 							className="w-full brightness-[60%] object-cover h-full"

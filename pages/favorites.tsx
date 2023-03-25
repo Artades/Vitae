@@ -18,7 +18,13 @@ const Favorites = () => {
 				</Head>
 				<InfoModal visible={isOpen} onClose={closeModal} />
 				<div className="pt-20">
-					<ImageList data={favorites} title="Favorites 💙 " />
+					{favorites <= 1 ? (
+						<h1 className="text-3xl text-white text-center">
+							You have no Favorites 😿{" "}
+						</h1>
+					) : (
+						<ImageList data={favorites} title="Favorites 🐱 " />
+					)}
 				</div>
 			</>
 		);
