@@ -21,7 +21,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ data }) => {
 	);
 
 	return (
-		<div className="group bg-zinc-900 col-span relative h-[16vw]">
+		<div className="group bg-zinc-900 col-span relative lg:h-[16vw]  h-[50vw]">
 			<img
 				onClick={redirectToWatch}
 				src={data.imageUrl}
@@ -38,7 +38,8 @@ const ImageCard: React.FC<ImageCardProps> = ({ data }) => {
         sm:group-hover:opacity-0
         delay-300
         w-full
-        h-[16vw]
+        lg:h-[16vw]
+		 h-[50vw]
       "
 			/>
 			<div

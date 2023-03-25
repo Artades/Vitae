@@ -39,7 +39,7 @@ export default function Home() {
 			<Navbar />
 			<Billboard />
 			<div className="pb-40">
-				<ImageList title="Trending Now" data={images} />
+				<ImageList title="Trending Images" data={images} />
 			</div>
 		</>
 	);

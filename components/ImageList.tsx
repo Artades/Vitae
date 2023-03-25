@@ -4,12 +4,12 @@ import { ImageInterface } from "@/types";
 import ImageCard from "@/components/ImageCard";
 import { isEmpty } from "lodash";
 
-interface MovieListProps {
+interface ImageListProps {
 	data: ImageInterface[];
 	title: string;
 }
 
-const ImageList: React.FC<MovieListProps> = ({ data, title }) => {
+const ImageList: React.FC<ImageListProps> = ({ data, title }) => {
 	if (isEmpty(data)) {
 		return null;
 	}
@@ -20,7 +20,7 @@ const ImageList: React.FC<MovieListProps> = ({ data, title }) => {
 				<p className="text-white text-md md:text-xl lg:text-2xl font-semibold mb-4">
 					{title}
 				</p>
-				<div className="grid grid-cols-2 gap-2">
+				<div className="grid lg:grid-cols-2 gap-2 ">
 					{data.map((image) => (
 						<ImageCard key={image.id} data={image} />
 					))}
