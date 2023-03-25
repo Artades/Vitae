@@ -7,11 +7,11 @@ export interface DetailesModalStoreInterface {
 	closeModal: () => void;
 }
 
-const useInfoModalStore = create<DetailesModalStoreInterface>((set) => ({
+const useDetailesModalStore = create<DetailesModalStoreInterface>((set) => ({
 	imageId: undefined,
 	isOpen: false,
 	openModal: (imageId: string) => set({ isOpen: true, imageId }),
 	closeModal: () => set({ isOpen: false, imageId: undefined }),
 }));
 
-export default useInfoModalStore;
+export default useDetailesModalStore;
