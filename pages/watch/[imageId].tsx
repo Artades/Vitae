@@ -1,8 +1,13 @@
-import React from "react";
-import { BsArrowLeftSquare, BsDownload } from "react-icons/bs";
+import React, { useCallback } from "react";
+import { BsArrowLeftSquare, BsChevronDown, BsDownload } from "react-icons/bs";
 import { useRouter } from "next/router";
 import useImage from "@/hooks/useImage";
 import Head from "next/head";
+import FavoriteButton from "@/components/FavoriteButton";
+import useInfoModalStore from "@/hooks/useInfoModalStore";
+import InfoModal from "@/components/InfoModal";
+import DetailesModal from "@/components/DetailesModal";
+import useDetailesModalStore from "@/hooks/useDetailesModalStore";
 
 const Watch = () => {
 	const router = useRouter();
@@ -19,6 +24,10 @@ const Watch = () => {
 		document.body.removeChild(link);
 	};
 	
+	const { isOpen, closeModal } = useDetailesModalStore();
+	const { openModal } = useDetailesModalStore();
+	
+
 	return (
 		<>
 			<Head>
@@ -27,6 +36,7 @@ const Watch = () => {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<DetailesModal visible={isOpen} onClose={closeModal} />
 			<div className="h-screen w-screen bg-black flex flex-column items-center justify-center">
 				<nav className="fixed top-0 right-0 left-0 w-full p-4 z-10 flex flex-row items-center gap-8 bg-black bg-opacity-70">
 					<BsArrowLeftSquare
@@ -36,10 +46,6 @@ const Watch = () => {
 					<p className="text-white text-1xl md:text-3xl font-bold">
 						<span className="text-sky-600">Title:</span> {data?.title}
 					</p>
-					<BsDownload
-						onClick={handleDownload}
-						className="w-4 h-8 md:w-10 text-white cursor-pointer hover:opacity-80 transition absolute right-9 text-sky-600"
-					/>
 				</nav>
 
 				<img
@@ -47,6 +53,19 @@ const Watch = () => {
 					src={data?.imageUrl}
 					alt=""
 				/>
+				<nav className="fixed bottom-0 right-0 left-0 w-full p-4 z-10 flex flex-row items-center gap-8 bg-black bg-opacity-70">
+					<BsDownload
+						onClick={handleDownload}
+						className="w-4 h-8 md:w-10 text-white cursor-pointer hover:opacity-80 transition absolute right-9 text-sky-600"
+					/>
+
+					<FavoriteButton imageId={data?.id} />
+
+					<BsChevronDown
+						onClick={() => openModal(data?.id)}
+						className="w-4 h-8 md:w-10 text-white cursor-pointer hover:opacity-80 transition"
+					/>
+				</nav>
 			</div>
 		</>
 	);
