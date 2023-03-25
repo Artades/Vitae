@@ -46,11 +46,10 @@ const Navbar = () => {
 			>
 				<img src="/images/logo.svg" className="h-5 lg:h-8" alt="Logo" />
 				<div className="flex-row ml-8 gap-7 hidden lg:flex">
-					<NavbarItem label="Home" active />
-					<NavbarItem label="Videos" />
-					<NavbarItem label="New & Popular" />
-					<NavbarItem label="My List" />
-			
+					<NavbarItem href="/" label="Home" active />
+					<NavbarItem href="/" label="Videos" />
+					<NavbarItem href="/" label="New & Popular" />
+					<NavbarItem href="/favorites" label="My List" />
 				</div>
 				<div
 					onClick={toggleMobileMenu}

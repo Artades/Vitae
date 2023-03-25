@@ -58,8 +58,7 @@ const InfoModal: React.FC<InfoModalProps> = ({ visible, onClose }) => {
 							</p>
 							<div className="flex flex-row gap-4 items-center">
 								<WatchButton imageId={data?.id} />
-								<FavoriteButton />
-								{/* imageId={data?.id} */}
+								<FavoriteButton imageId={data?.id} />
 							</div>
 						</div>
 					</div>

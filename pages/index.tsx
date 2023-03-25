@@ -38,7 +38,7 @@ export default function Home() {
 			</Head>
 			<Navbar />
 			<Billboard />
-			<div className="pb-40">
+			<div className="pb-20">
 				<ImageList title="Trending Images" data={images} />
 			</div>
 		</>
