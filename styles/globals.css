@@ -14,3 +14,15 @@ body{
 html{
   @apply h-full
 }
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #2D3748;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #0066a1;
+  border-radius: 4px;
+}

@@ -20,13 +20,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ visible }) => {
 				</Link>
 
 				<Link href="/">
-					<div className="px-3 text-center text-white hover:underline">
+					<div className="px-3 text-center text-neutral-500 hover:underline cursor-not-allowed">
 						Videos
 					</div>
 				</Link>
 
 				<Link href="/">
-					<div className="px-3 text-center text-white hover:underline">
+					<div className="px-3 text-center text-neutral-500 hover:underline cursor-not-allowed">
 						New & Popular
 					</div>
 				</Link>
