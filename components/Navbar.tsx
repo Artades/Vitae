@@ -4,6 +4,7 @@ import AccountMenu from "@/components/AccountMenu";
 import MobileMenu from "@/components/MobileMenu";
 import NavbarItem from "@/components/NavbarItem";
 import { IoSearchOutline, IoSettingsOutline } from "react-icons/io5";
+import Link from "next/link";
 
 const TOP_OFFSET = 66;
 
@@ -65,11 +66,13 @@ const Navbar = () => {
 				</div>
 				<div className="flex flex-row ml-auto gap-7 items-center">
 					<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-						<IoSearchOutline className="w-6 h-6" />
+						<IoSearchOutline className=" ml-4 w-6 h-6" />
 					</div>
-					<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-						<IoSettingsOutline className="w-6 h-6" />
-					</div>
+					<Link href="/settings" className="w-full">
+						<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
+							<IoSettingsOutline className="w-6 h-6" />
+						</div>
+					</Link>
 					<div
 						onClick={toggleAccountMenu}
 						className="flex flex-row items-center gap-2 cursor-pointer relative"
