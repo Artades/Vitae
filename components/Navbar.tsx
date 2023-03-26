@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { BsBell, BsSearch, BsChevronDown } from "react-icons/bs";
-
+import {BsChevronDown } from "react-icons/bs";
 import AccountMenu from "@/components/AccountMenu";
 import MobileMenu from "@/components/MobileMenu";
 import NavbarItem from "@/components/NavbarItem";
+import { IoSearchOutline, IoSettingsOutline } from "react-icons/io5";
 
 const TOP_OFFSET = 66;
 
@@ -57,18 +57,18 @@ const Navbar = () => {
 				>
 					<p className="text-white text-sm">Browse</p>
 					<BsChevronDown
-						className={`w-4 text-white fill-white transition ${
-							showMobileMenu ? "rotate-180" : "rotate-0"
+						className={`w-4   transition ${
+							showMobileMenu ? "rotate-180 text-sky-600" : "rotate-0 text-white"
 						}`}
 					/>
 					<MobileMenu visible={showMobileMenu} />
 				</div>
 				<div className="flex flex-row ml-auto gap-7 items-center">
 					<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-						<BsSearch className="w-6" />
+						<IoSearchOutline className="w-6 h-6" />
 					</div>
 					<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-						<BsBell className="w-6" />
+						<IoSettingsOutline className="w-6 h-6" />
 					</div>
 					<div
 						onClick={toggleAccountMenu}

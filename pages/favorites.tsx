@@ -2,8 +2,31 @@ import ImageList from '@/components/ImageList';
 import InfoModal from '@/components/InfoModal';
 import useFavorites from '@/hooks/useFavorites';
 import useInfoModalStore from '@/hooks/useInfoModalStore';
+import { getSession } from "next-auth/react";
+import { NextPageContext } from "next";
 import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
+
+export async function getServerSideProps(context: NextPageContext) {
+	const session = await getSession(context);
+
+
+	if (!session) {
+		return {
+			redirect: {
+				destination: "/auth",
+				permanent: false,
+			},
+		};
+	}
+	return {
+		props: {},
+	};
+}
+
+
 
 const Favorites = () => {
      const { data: favorites = [] } = useFavorites();
@@ -19,9 +42,26 @@ const Favorites = () => {
 				<InfoModal visible={isOpen} onClose={closeModal} />
 				<div className="pt-20">
 					{favorites <= 1 ? (
-						<h1 className="text-3xl text-white text-center">
-							You have no Favorites 😿{" "}
-						</h1>
+						<div className="w-full flex flex-col items-center justify-center">
+							<h1 className="text-3xl text-white text-center">
+								You have no Favorites 😿{" "}
+							</h1>
+							<Link href="/" className="w-full">
+								<button
+									className="bg-sky-500
+								
+                                            py-3
+                                            text-white 
+                                            rounded-md 
+                                            w-full
+                                            mt-10
+                                            hover:bg-sky-300 
+                                            transition"
+								>
+									Fix It
+								</button>
+							</Link>
+						</div>
 					) : (
 						<ImageList data={favorites} title="Favorites 🐱 " />
 					)}

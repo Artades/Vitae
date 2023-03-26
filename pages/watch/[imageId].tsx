@@ -1,13 +1,12 @@
-import React, { useCallback } from "react";
-import { BsArrowLeftSquare, BsChevronDown, BsDownload } from "react-icons/bs";
+import React from "react";
+import {  BsChevronDown, BsDownload } from "react-icons/bs";
 import { useRouter } from "next/router";
 import useImage from "@/hooks/useImage";
 import Head from "next/head";
 import FavoriteButton from "@/components/FavoriteButton";
-import useInfoModalStore from "@/hooks/useInfoModalStore";
-import InfoModal from "@/components/InfoModal";
 import DetailesModal from "@/components/DetailesModal";
 import useDetailesModalStore from "@/hooks/useDetailesModalStore";
+import { IoReturnDownBackOutline } from "react-icons/io5";
 
 const Watch = () => {
 	const router = useRouter();
@@ -39,7 +38,7 @@ const Watch = () => {
 			<DetailesModal visible={isOpen} onClose={closeModal} />
 			<div className="h-screen w-screen bg-black flex flex-column items-center justify-center">
 				<nav className="fixed top-0 right-0 left-0 w-full p-4 z-10 flex flex-row items-center gap-8 bg-black bg-opacity-70">
-					<BsArrowLeftSquare
+					<IoReturnDownBackOutline
 						onClick={() => router.push("/")}
 						className="w-4 h-8 md:w-10 text-white cursor-pointer hover:opacity-80 transition"
 					/>
