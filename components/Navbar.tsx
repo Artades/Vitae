@@ -48,8 +48,8 @@ const Navbar = () => {
 				<img src="/images/logo.svg" className="h-5 lg:h-8" alt="Logo" />
 				<div className="flex-row ml-8 gap-7 hidden lg:flex">
 					<NavbarItem href="/" label="Home" active />
-					<NavbarItem href="/" label="Videos" disabled />
-					<NavbarItem href="/" label="New & Popular" disabled />
+					{/* <NavbarItem href="/" label="Videos" disabled />
+					<NavbarItem href="/" label="New & Popular" disabled /> */}
 					<NavbarItem href="/favorites" label="My List" />
 				</div>
 				<div
@@ -65,9 +65,12 @@ const Navbar = () => {
 					<MobileMenu visible={showMobileMenu} />
 				</div>
 				<div className="flex flex-row ml-auto gap-7 items-center">
-					<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
-						<IoSearchOutline className=" ml-4 w-6 h-6 text-neutral-600 cursor-not-allowed" />
-					</div>
+					<Link href={"/search"}>
+						<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
+							<IoSearchOutline className=" ml-4 w-6 h-6 " />
+						</div>
+					</Link>
+
 					<Link href="/settings" className="w-full">
 						<div className="text-gray-200 hover:text-gray-300 cursor-pointer transition">
 							<IoSettingsOutline className="w-6 h-6" />

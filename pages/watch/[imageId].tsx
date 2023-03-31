@@ -39,7 +39,7 @@ const Watch = () => {
 			<div className="h-screen w-screen bg-black flex flex-column items-center justify-center">
 				<nav className="fixed top-0 right-0 left-0 w-full p-4 z-10 flex flex-row items-center gap-8 bg-black bg-opacity-70">
 					<IoReturnDownBackOutline
-						onClick={() => router.push("/")}
+						onClick={() => router.back()}
 						className="w-4 h-8 md:w-10 text-white cursor-pointer hover:opacity-80 transition"
 					/>
 					<p className="text-white text-1xl md:text-3xl font-bold">
@@ -55,7 +55,7 @@ const Watch = () => {
 				<nav className="fixed bottom-0 right-0 left-0 w-full p-4 z-10 flex flex-row items-center gap-8 bg-black bg-opacity-70">
 					<BsDownload
 						onClick={handleDownload}
-						className="w-4 h-8 md:w-10 text-white cursor-pointer hover:opacity-80 transition absolute right-9 text-sky-600"
+						className=" animate-bounce w-4 h-8 md:w-10 text-white cursor-pointer hover:opacity-80 transition absolute right-9 text-sky-600"
 					/>
 
 					<FavoriteButton imageId={data?.id} />

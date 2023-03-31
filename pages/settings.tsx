@@ -43,8 +43,8 @@ console.dir(userData?.favoriteIds.length);
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div className=" w-full flex py-20 h-full justify-center bg-black ">
-				<div className=" w-[80vw] flex flex-col">
-					<h1 className="text-4xl text-white">Settings</h1>
+				<div className="w-[80vw] flex flex-col">
+					<h1 className="text-4xl text-white font-bold">Settings</h1>
 					<hr className="my-10" />
 					<p className="text-2xl text-white mb-3">
 						Name: <span className="text-sky-600">{userData?.name}</span>
@@ -58,9 +58,7 @@ console.dir(userData?.favoriteIds.length);
 					<p className="text-2xl text-white mb-3">
 						Email verification status:{" "}
 						<span
-							className={`text-${
-								userData?.emailVerified ? "green" : "red"
-							}-600`}
+							className='text-green-600'
 						>
 							{getEmailVerifiedString()}
 						</span>

@@ -28,6 +28,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ data }) => {
 				alt="Image"
 				draggable={false}
 				className="
+		
         cursor-pointer
         object-cover
         transition

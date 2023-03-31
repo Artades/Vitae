@@ -26,6 +26,7 @@ export async function getServerSideProps(context: NextPageContext) {
 
 export default function Home() {
 	const { data: images = [] } = useImageList();
+
 	const { isOpen, closeModal } = useInfoModalStore();
 	return (
 		<>
@@ -39,7 +40,7 @@ export default function Home() {
 			<Navbar />
 			<Billboard />
 			<div className="pb-20">
-				<ImageList title="Trending Images" data={images} />
+				<ImageList title="Trending Images" data={images}  />
 			</div>
 		</>
 	);

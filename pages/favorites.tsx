@@ -8,6 +8,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { AiOutlineLeft } from 'react-icons/ai';
 
 export async function getServerSideProps(context: NextPageContext) {
 	const session = await getSession(context);
@@ -31,6 +32,7 @@ export async function getServerSideProps(context: NextPageContext) {
 const Favorites = () => {
      const { data: favorites = [] } = useFavorites();
 	 const { isOpen, closeModal } = useInfoModalStore();
+	 const router = useRouter()
     return (
 			<>
 				<Head>
@@ -40,7 +42,7 @@ const Favorites = () => {
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 				<InfoModal visible={isOpen} onClose={closeModal} />
-				<div className="pt-20">
+				<div className="pt-20 w-full flex flex-col items-center">
 					{favorites <= 1 ? (
 						<div className="w-full flex flex-col items-center justify-center">
 							<h1 className="text-3xl text-white text-center">
@@ -63,7 +65,9 @@ const Favorites = () => {
 							</Link>
 						</div>
 					) : (
-						<ImageList data={favorites} title="Favorites 🐱 " />
+						
+							<ImageList data={favorites} title="Favorites 🐱"  />
+						
 					)}
 				</div>
 			</>
